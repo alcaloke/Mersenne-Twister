@@ -2,23 +2,23 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', assignSeed);
 
+let n = 0;
+
 function assignSeed(e){
     e.preventDefault();
 
-    let minRange = document.getElementById('min');
-    let maxRange = document.getElementById('max');
-    let seedInput = document.getElementById('seedInput');
-
-    let minNum = parseInt(minRange.value);
-    let maxNum = parseInt(maxRange.value);
-    let seed = seedInput.value;
+    let minRange = parseInt(document.getElementById('min').value);
+    let maxRange = parseInt(document.getElementById('max').value);
+    let seed = document.getElementById('seedInput').value;
     
     let chance = new Chance(seed);
     let output = chance.integer({
-        min: minNum,
-        max: maxNum
-    })
+        min: minRange,
+        max: maxRange
+    });
     
-    let print = document.getElementById('output')
-    print.innerHTML = '<p class="text-success">' + output + '</p>';
+    document.getElementById('output').innerHTML = '<p class="text-success">' + output + '</p>';
+    
+    n++;
+    console.log('random number ' + n + ' generated');
 }
