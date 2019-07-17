@@ -1,0 +1,11 @@
+h1 {
+    margin-top: 10px;
+}
+
+input[type='number'] {
+    width: 50%;
+}
+
+input[type='text'] {
+    width: 60%;
+}
