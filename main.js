@@ -5,12 +5,12 @@ form.addEventListener('submit', assignSeed);
 function assignSeed(e){
     e.preventDefault();
 
-    let minRand = document.getElementById('min');
-    let maxRand = document.getElementById('max');
+    let minRange = document.getElementById('min');
+    let maxRange = document.getElementById('max');
     let seedInput = document.getElementById('seedInput');
 
-    let minNum = parseInt(minRand.value);
-    let maxNum = parseInt(maxRand.value);
+    let minNum = parseInt(minRange.value);
+    let maxNum = parseInt(maxRange.value);
     let seed = seedInput.value;
     
     let chance = new Chance(seed);
@@ -20,5 +20,5 @@ function assignSeed(e){
     })
     
     let print = document.getElementById('output')
-    print.innerHTML = '<p class="display4 text-success">' + output + '</p>';
+    print.innerHTML = '<p class="text-success">' + output + '</p>';
 }
